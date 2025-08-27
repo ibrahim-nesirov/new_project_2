@@ -1,0 +1,39 @@
+﻿@model new_project_2.Models.Musteri
+
+@{
+    ViewData["Title"] = "Müştəri əlavə";
+}
+
+<h2>Müştəri əlavə</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="musteriad">Ad</label>
+        <input asp-for="musteriad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="musterisoyad">Soyad</label>
+        <input asp-for="musterisoyad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="musteriataadi">Ata adı</label>
+        <input asp-for="musteriataadi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefon">Telefon</label>
+        <input asp-for="Telefon" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Əlavə et</button>
+</form>
+
+@if (ViewBag.Mesaj != null)
+{
+    <div class="alert alert-success">@ViewBag.Mesaj</div>
+}
+
+<hr />
+
+
+<a asp-controller="Musteri" asp-action="ExportToExcel" class="btn btn-success">
+    Excel-ə Export
+</a>
